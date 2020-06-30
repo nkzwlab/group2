@@ -23,6 +23,10 @@
         }
 
         function search($word, $tableName='books', $type='name') {
+            if (is_null($word)) {
+                return NULL;
+            }
+
             $myQuery = 'SELECT * FROM ' . $tableName . ' WHERE '. $type . ' LIKE "%' . $word . '%";';
             $result = array();
 
