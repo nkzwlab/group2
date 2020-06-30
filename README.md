@@ -14,7 +14,7 @@ docker-compose up -d
 ```
 のあと
 ```
-http://localhost:8080/index.php
+http://localhost:8080
 ```
 で最初のページにアクセス可。
 ```
