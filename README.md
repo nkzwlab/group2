@@ -16,4 +16,9 @@ docker-compose up
 ```
 http://localhost:8080/index.php
 ```
-で最初のページにアクセス可
+で最初のページにアクセス可。
+```
+cd group2
+docker-compose down
+```
+で終了。
