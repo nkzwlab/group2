@@ -10,7 +10,7 @@ brew cask install docker
 クローンする。
 ```
 cd group2
-docker-compose up
+docker-compose up -d
 ```
 のあと
 ```
