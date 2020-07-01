@@ -25,6 +25,7 @@
         <title>勉強本</title>
     </head>
     <body>
+        <input type="button" value="本を追加" onclick="document.getElementById('book').style.display='block'">
         <h1>一覧</h1>
         <?php
             $result = $control->listAll('books');
@@ -42,7 +43,11 @@
             $result = $control->search($searchWord);
             showResult($result);
         ?>
-
+        <div id="book">
+            <h2>本を追加</h2>
+            <form action = "index.php" method = 'POST'>
+            <input type="text" name="title" value="<?php echo $title;?>">
+            <input type="submit" value="追加">
         </form>
     </body>
 </html>

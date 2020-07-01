@@ -40,6 +40,13 @@
 
             return $result;
         }
+
+        function add($word, $tableName='books', $type='name') {
+            if (is_null($word)){
+                return NULL;
+            }
+            $myQuery = 'INSERT INTO $tableName (title) VALUES("'.$word.'")';
+        }
     }
 
 ?>
