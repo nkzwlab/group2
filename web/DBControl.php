@@ -23,7 +23,7 @@
         }
 
         function search($word, $tableName='books', $type='name') {
-            if (is_null($word)) {
+            if (is_null($word) || $word == ''){
                 return NULL;
             }
 
@@ -42,10 +42,11 @@
         }
 
         function add($word, $tableName='books', $type='name') {
-            if (is_null($word)){
+            if (is_null($word) || $word == ''){
                 return NULL;
             }
-            $myQuery = 'INSERT INTO $tableName (title) VALUES("'.$word.'")';
+            $myQuery = 'INSERT INTO ' . $tableName . ' (' . $type . ') VALUES ("'. $word .'");';
+            $this->pdo->query($myQuery);
         }
     }
 
