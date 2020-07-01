@@ -10,15 +10,10 @@ brew cask install docker
 クローンする。
 ```
 cd group2
-docker-compose up -d
+docker-compose up
 ```
 のあと
 ```
 http://localhost:8080
 ```
 で最初のページにアクセス可。
-```
-cd group2
-docker-compose down
-```
-で終了。
