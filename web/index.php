@@ -48,6 +48,10 @@
             <form action = "index.php" method = 'POST'>
             <input type="text" name="title" value="<?php echo $title;?>">
             <input type="submit" value="追加">
+            <?php
+                $result = $control->add('books');
+                showResult($result);
+            ?>
         </form>
     </body>
 </html>
