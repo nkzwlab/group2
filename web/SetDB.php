@@ -23,7 +23,8 @@
             $this->pdo->query (
                 'create table if not exists books (
                 id int AUTO_INCREMENT primary key,
-                name varchar(255) not null
+                name varchar(255) not null,
+                comment varchar(255)
                 );'
             );
 
