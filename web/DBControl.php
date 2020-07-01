@@ -52,9 +52,8 @@
             if (is_null($rate) || $rate == ''){
                 return NULL;
             }
-            $myQuery = 'INSERT INTO books (rate) VALUES ("' . $rate . '")';
-            #$myQuery = 'UPDATE books SET name = "' . $rate . '"' . ' WHERE name = "' . $choose_book . '"';
-            #$myQuery = 'UPDATE books SET name = "' . $rate . '"' . ' WHERE id = 3';
+            $myQuery = 'UPDATE books SET rate = "' . $rate . '"' . ' WHERE name = "' . $choose_book . '"';
+            #$myQuery = 'UPDATE books SET name = "' . $choose_book . '"' . ' WHERE id = 3';
             $this->pdo->query($myQuery);
         }
     }
