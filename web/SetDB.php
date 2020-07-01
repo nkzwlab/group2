@@ -7,7 +7,7 @@
         public function __construct() {
             try {
                 // データベースに接続
-                $db = 'mysql:host=db;dbname=group2;charset=utf8';
+                $db = 'mysql:host=db;dbname=group2;set_charset=utf8';
                 $username = 'root';
                 $password = 'badpassword';
                 $this->pdo = new PDO($db, $username, $password);
@@ -23,7 +23,8 @@
             $this->pdo->query (
                 'create table if not exists books (
                 id int AUTO_INCREMENT primary key,
-                name varchar(255) not null
+                name varchar(255) not null,
+                rate varchar(255)
                 );'
             );
 

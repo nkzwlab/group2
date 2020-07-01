@@ -13,12 +13,11 @@
 
             try {
                 foreach ( $this->pdo->query($myQuery) as $row ) {
-                    array_push($result, $row['name']);
+                    array_push($result, $row['name'] . '//' . $row['rate']);
                 }
             } catch (\Throwable $th) {
                 throw $th;
             }
-
             return $result;
         }
 
@@ -46,6 +45,16 @@
                 return NULL;
             }
             $myQuery = 'INSERT INTO ' . $tableName . ' (' . $type . ') VALUES ("'. $word .'");';
+            $this->pdo->query($myQuery);
+        }
+
+        function rate_Add($choose_book,$rate) {
+            if (is_null($rate) || $rate == ''){
+                return NULL;
+            }
+            $myQuery = 'INSERT INTO books (rate) VALUES ("' . $rate . '")';
+            #$myQuery = 'UPDATE books SET name = "' . $rate . '"' . ' WHERE name = "' . $choose_book . '"';
+            #$myQuery = 'UPDATE books SET name = "' . $rate . '"' . ' WHERE id = 3';
             $this->pdo->query($myQuery);
         }
     }

@@ -14,6 +14,10 @@
 
         $new = $_GET['newbook'];
         $control->add($new);
+        
+        $choose_book = $_GET['choose_book'];
+        $rate = $_GET['rate'];
+        $control->rate_Add($choose_book,$rate);
     } else {
         echo 'Failed to connect to DB';
     }
@@ -52,5 +56,26 @@
                 <input type="text" name="newbook">
                 <input type="submit" value="追加">
             </form>
+
+        <h1>評価</h1>
+        <form action = “index.php” method = 'GET'>
+        <select name="choose_book">
+        <?php
+            $result = $control->listAll('books');
+            foreach($result as $result) {
+                print('<option value="' . $result . '">' . $result . '</option>');
+                }
+            ?>
+        </select>
+       <select name="rate">
+       <?php
+           $rate_num = array('☆1','☆2','☆3','☆4','☆5');
+           foreach($rate_num as $rate_num) {
+               print('<option value="' . $rate_num . '">' . $rate_num . '</option>');
+               }
+           ?>
+       </select>
+        <input type="submit" value="評価追加">
+        </form>
     </body>
 </html>
