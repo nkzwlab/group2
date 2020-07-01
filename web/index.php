@@ -12,6 +12,8 @@
     if($connection) {
         $control = new DBControl($sDB->getPDO());
 
+        $new = $_GET['newbook'];
+        $control->add($new);
     } else {
         echo 'Failed to connect to DB';
     }
@@ -25,6 +27,7 @@
         <title>勉強本</title>
     </head>
     <body>
+        <input type="button" value="本を追加" onclick="document.getElementById('book').style.display='block'">
         <h1>一覧</h1>
         <?php
             $result = $control->listAll('books');
@@ -33,8 +36,9 @@
 
         <h1>検索</h1>
         <form action = “index.php” method = 'GET'>
-        <input type = 'text' name ='searchWord'><br/>
-        <input type = 'submit' value ='送信'>
+            <input type = 'text' name ='searchWord'><br/>
+            <input type = 'submit' value ='送信'>
+        </form>
 
         <h2>検索結果</h2>
         <?php
@@ -42,7 +46,11 @@
             $result = $control->search($searchWord);
             showResult($result);
         ?>
-
-        </form>
+        <div id="book">
+            <h2>本を追加</h2>
+            <form action = “index.php” method = 'GET'>
+                <input type="text" name="newbook">
+                <input type="submit" value="追加">
+            </form>
     </body>
 </html>
