@@ -46,7 +46,6 @@
                 return NULL;
             }
             $myQuery = 'INSERT INTO $tableName (title) VALUES("'.$word.'")';
-            listAll($tableName='books')
         }
     }
 

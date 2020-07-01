@@ -50,7 +50,6 @@
             <input type="submit" value="追加">
             <?php
                 $result = $control->add('books');
-                showResult($result);
             ?>
         </form>
     </body>
