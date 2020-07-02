@@ -14,7 +14,7 @@
 
         $new = $_GET['newbook'];
         $control->add($new);
-        
+
         $choose_book = $_GET['choose_book'];
         $rate = $_GET['rate'];
         $control->rate_Add($choose_book,$rate);
@@ -77,5 +77,13 @@
        </select>
         <input type="submit" value="評価追加">
         </form>
+
+        <h1>スライド</h1>
+        <object data="./webservice.pdf#page=1" type="application/pdf" width="100%" height="600px">
+            <p>
+                <b>失敗</b>: <a href="./webservice.pdf">PDF をダウンロード</a>.
+            </p>
+        </object>
+
     </body>
 </html>
