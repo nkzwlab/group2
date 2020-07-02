@@ -31,7 +31,7 @@
         <title>勉強本</title>
     </head>
     <body>
-        <input type="button" value="本を追加" onclick="document.getElementById('book').style.display='block'">
+        <!-- <input type="button" value="本を追加" onclick="document.getElementById('book').style.display='block'"> -->
         <h1>一覧</h1>
         <?php
             $result = $control->listAll('books');
